@@ -6,11 +6,13 @@ const provider = new GoogleAuthProvider();
 
 const Login = () => {
     const [users, setUsers] = useState(null);
+    console.log(users);
+
 
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, provider)
             .then(result => {
-                console.log(result.user);
+                console.log(result.user.photoURL);
                 setUsers(result.user);
             })
             .catch(error => {
@@ -35,6 +37,8 @@ const Login = () => {
             {users && <div>
                 <h3>Name : {users.displayName}</h3>
                 <h3>Email : {users.email}</h3>
+                <img src={users.photoURL}
+                    alt="" />
             </div>}
         </div>
     );
