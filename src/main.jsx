@@ -7,6 +7,7 @@ import Root from './layout/Root.jsx';
 import Home from './components/Home.jsx';
 import Login from './components/Login.jsx';
 import GitHub from './components/GitHub.jsx';
+import Register from './components/Register.jsx';
 
 
 const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         Component: Login,
+      },
+      {
+        path: '/register',
+        Component: Register,
       },
       {
         path: '/github',
